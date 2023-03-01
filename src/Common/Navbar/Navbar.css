@@ -121,6 +121,7 @@ nav {
 .right-side {
     display: flex;
     align-items: center;
+     
 }
 
 .signin-button {
@@ -164,6 +165,32 @@ nav {
    
 }
 
+.after-login{
+    display: flex;
+    align-items: center;
+    gap:15px;
+     
+}
+.profile-photo{
+    cursor: pointer;
+}
+.after-login img{
+    width: 40px;
+    border-radius: 50%;
+   
+}
+
+.displayName{
+   display: none;
+    position: absolute;
+    margin-top:-15px;
+    padding:10px;
+    margin-left: -30px;
+}
+
+.profile-photo:hover .displayName{
+     display: block;
+}   
 
 
 @media only screen and (max-width: 768px) {
