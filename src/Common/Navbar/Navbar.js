@@ -59,7 +59,7 @@ const Navbar = () => {
                 </div>
                 <div className={`right-side   `}>
 
-                    <button className="signin-button">Sign In</button>
+                    <Link to='/login'><button className="signin-button">Sign In</button></Link>
                 </div>
             </div>
             
