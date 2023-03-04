@@ -1,0 +1,66 @@
+.header-home-LightMode {
+  background-color: #eeeeee !important;
+}
+.header-home-DarkMode {
+  color: white;
+  background-color: #040303;
+}
+
+.home-header {
+  padding: 5% 0% 5% 20%;
+  margin: 0px;
+
+  height: 400px;
+}
+.home-header-title {
+  width: 50%;
+  font-size: 3rem;
+  margin: 0px;
+}
+
+.home-header-button {
+  background-color: #39abf6;
+  padding: 15px;
+  width: 150px;
+  border: none;
+  border-radius: 10px;
+  font-size: large;
+  color: white;
+}
+
+.header-link {
+  color: #39abf6;
+  text-decoration: none;
+}
+.header-link:hover {
+  text-decoration: underline;
+}
+
+
+
+/* For responsive Home Header  */
+@media only screen and (max-width: 768px) {
+  .home-header {
+    padding: 7% 0% 5% 10%;
+    margin: 0px;
+    height: 210px;
+  }
+  .home-header-title {
+    width: 70%;
+    font-size: 1.2rem;
+    margin: 0px;
+  }
+
+  .header-link-button {
+    width: 90%;
+  }
+
+  .home-header-button {
+    background-color: #39abf6;
+    padding: 10px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    font-size: small;
+  }
+}

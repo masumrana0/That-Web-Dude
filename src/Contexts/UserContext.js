@@ -1,24 +1,27 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import app from '../Firebase/Firebase.config';
+import { async } from '@firebase/util';
 
 export const contexts = createContext();
 const UserContext = ({ children }) => {
-    const [theme, setTheme] = useState(false);
-    const [changeTheme, setChangeTheme] = useState(null);
+    const [theme, setTheme] = useState( );
+    const [updatedTheme,SetupdatedTheme] = useState(null);
     const [user, setUser] = useState(null);
 
     //  add Seclected theme in localStorage 
 
 
     //    useEffect(()=>{
-    //     localStorage.setItem('theme',theme)
-    //     },[theme]);
+    //      localStorage.setItem('theme',theme)
+    //     },[]);
 
     // useEffect(()=>{
-    //     const changeingTheme=localStorage.getItem('theme');
-    //     setChangeTheme(changeingTheme)
-    //  })
+    //    const updatedTheme=localStorage.getItem('theme')
+    //    console.log(updatedTheme)
+    //  },[theme])
+     
+
 
 
     // Firebase uses 
@@ -71,7 +74,9 @@ const UserContext = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
           if(currentUser===null|| currentUser.emailVerified){
             setUser(currentUser);
+            console.log('Auth state changed',currentUser)
           }
+          
         })
 
         return () => unSubscribe();
@@ -86,9 +91,8 @@ const UserContext = ({ children }) => {
     const ContextInfo = {
         theme,
         setTheme,
-        changeTheme,
         user,
-        setChangeTheme,
+        updatedTheme,
         createUser,
         verifyEmail,
         updateProfileName,
