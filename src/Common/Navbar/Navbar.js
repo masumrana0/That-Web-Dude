@@ -60,7 +60,15 @@ const Navbar = () => {
         >
           <div className={`middle-side ${open && "open"}  `}>
             <Link
-              to="/courses"
+              to="/"
+              className={`nav-item ${
+                theme ? "navItemDark" : "navItemLight"
+              }`}
+            >
+              Home
+            </Link>
+            <Link
+              to="/allcourses"
               className={`nav-item ${
                 theme ? "navItemDark" : "navItemLight"
               }`}

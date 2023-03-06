@@ -16,7 +16,7 @@ const Home = () => {
       >
         <h6 className="home-header-title">
           <TypeAnimation
-            // Same String at the start will only be typed once, initially
+           
             sequence={[
               " Exclusive React Workshop for Beginners!",
               1000,
@@ -24,7 +24,7 @@ const Home = () => {
               1000,
               " Exclusive  HTML Workshop for Beginners!",
               1000,
-              " Exclusive  CSS Workshop for Beginners!",
+              " Exclusive CSS Workshop for Beginners!",
               1000,
             ]}
             speed={50}  

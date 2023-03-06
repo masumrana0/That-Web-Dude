@@ -1,0 +1,85 @@
+*{
+    margin:0px;
+}
+.all-courses-card{
+    width: 88%;
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    
+    
+}
+ 
+.card-cotnainer{
+    width: 400px;
+    height: 460px;
+    border: 1px solid rgb(192, 181, 160);
+    border-radius: 5px;
+    position: relative;
+    background-color: var(--light);
+}
+.card-cotnainer img{
+    width: 98%;
+    height: 60%;
+     margin-left: 4px;
+     padding-top: 2px;
+    
+}
+
+
+.card-dettails{
+    padding:0px 20px;
+     
+}
+
+.name-rating{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:rgb(114, 116, 118);
+    margin: 8px 0px;
+}
+
+.star-color{
+    color:#fac93e;
+}
+
+.duration-people{
+    display: flex;
+    justify-content: space-between;
+    margin:5px 0px;
+    
+}
+.duration{
+    display: flex;
+    align-items: center;
+}
+.btn-details{
+    padding:10px;
+    background-color:rgb(11, 142, 142);
+    border: none;
+    border-radius: 5px;
+    color:white;
+    width: 300px;
+    
+     
+}
+
+.card-btn{
+    position: absolute;
+    bottom: 5px;
+     margin-left: 13%;
+     
+     
+
+}
+ 
+.cardDarkMode{
+color:white !important;
+background-color: #596273;
+
+}
+
+.cardLightTheme{
+ 
+}
