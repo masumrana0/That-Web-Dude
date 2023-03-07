@@ -1,0 +1,46 @@
+.card-details-cotnainer {
+  width: 100%;
+border-radius: 8px;
+background-color:var(--light);
+  border: 1px solid rgb(183, 177, 177);
+  margin-bottom: 100px;
+  overflow: hidden;
+}
+.card-details-cotnainer img {
+  width: 100%;
+}
+
+.ins-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+
+.ins-container img {
+  width: 100px;
+}
+
+
+.cardDetails-btn {
+  margin: 2% 0%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-purchase {
+    padding: 10px 60px;
+    background-color: aqua;
+    border:none;
+    border-radius: 8px;
+   font-weight: bold;
+    font-size: 1rem;
+     
+  }
+
+  .btn-purchase:hover{
+    background-color: black;
+    color:white;
+  }
+  

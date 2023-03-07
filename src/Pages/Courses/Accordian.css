@@ -1,91 +1,58 @@
- /* .accordian {
-  margin-top: 2%;
-}
-
-/* for accordian 1 item 
-.accordian-item {
-  position: relative;
-  transition: ease-in-out;
-  transition-duration: 500ms;
-}
-
-.accordian-item-button {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  background-color: #efe5e5;
-  width: 80%;
-  padding: 10px;
-  margin-bottom: 6px;
-  cursor: pointer;
-}
-
-.accordian-content {
-  position: absolute;
-  border-bottom: 1px solid rgb(112, 105, 105);
-  width: 80%;
-}
-
-
-.item-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 15px;
-  cursor: pointer;
-} */
-
- 
- 
-   
-
 .accordion {
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    
-  }
-  
-  .accordion-header {
-    padding: 10px;
-    cursor: pointer;
-    background-color: #f2f2f2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-  }
-  
-  .accordion-header:hover {
-    background-color: #ddd;
-  }
-  
-  .accordion-content {
-    padding: 10px;
-  }
-  
-  .icon {
-    display: inline-block;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    margin-left: 5px;
-  }
-  
-  .icon.up {
-    border-width: 0 5px 5px 5px;
-    border-color: transparent transparent #555 transparent;
-  }
-  
-  .icon.down {
-    border-width: 5px 5px 0 5px;
-    border-color: #555 transparent transparent transparent;
-  }
-  
-  
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
 
-  
+.accordion-header {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.accordion-header:hover {
+  background-color: #ddd;
+}
 
+.accordion-content {
+  padding: 10px;
+}
+
+.icon {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  margin-left: 5px;
+}
+
+.icon.up {
+  border-width: 0 5px 5px 5px;
+  border-color: transparent transparent #555 transparent;
+}
+
+.icon.down {
+  border-width: 5px 5px 0 5px;
+  border-color: #555 transparent transparent transparent;
+}
+
+.accordian-container {
    
- 
-    
+}
+
+.accordion-content{
+  display: flex;
+  justify-content: space-between;
+}
+.item-content-align{
+  display: flex;
+  align-items: center;
+  gap:5px;
+}
+
+
+.accordian-title{
+  margin-bottom: 2%;
+}

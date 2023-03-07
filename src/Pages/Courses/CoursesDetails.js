@@ -3,8 +3,9 @@ import { FaStar } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import Accordion from "./Accordian";
+import CardDetailsCard from "./CardDetailsCard";
+import CourseCard from "./CourseCard";
 import "./CourseDettails.css";
- 
 
 const CoursesDetails = () => {
   const data = useLoaderData();
@@ -60,13 +61,22 @@ const CoursesDetails = () => {
             <h2>Description</h2>
             <p>{description}</p>
           </div>
-          <div>
+          <div className="accoridan-main-container">
             <div>
-              <Accordion/>
+            <div className="accordian-title">
+            <h2>Lessons</h2>
+            <div className="lestion-text">
+              <p>48 lessons</p>
+              <p>01.02:10</p>
+            </div>
+          </div>
+              <Accordion />
             </div>
           </div>
         </div>
-        <div className="course-card"></div>
+        <div className="course-card">
+          <CardDetailsCard data={data} />
+        </div>
       </div>
     </div>
   );
