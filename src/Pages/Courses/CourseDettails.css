@@ -1,7 +1,5 @@
 .course-details-container {
-  
 }
- 
 
 .course-header {
   padding: 5%;
@@ -49,21 +47,72 @@
   align-items: center;
 }
 
-.accordian-title{
+.accordian-title {
   display: flex;
   justify-content: space-between;
 }
 
-.lestion-text{
+.lestion-text {
   display: flex;
-   gap:30px;
+  gap: 30px;
 }
 
- 
-.course-text{
+.course-text {
   display: flex;
   flex-direction: column;
-  gap:6%;
+  gap: 6%;
   padding-right: 10%;
-   
+}
+
+.btn-pdf-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px;
+}
+.pdf-download-btn {
+  padding: 10px;
+  font-weight: bold;
+
+  border: none;
+  color: rgb(34, 29, 29);
+  font-weight: bold;
+  border-radius: 8px;
+  background-color: black;
+  color: white;
+}
+
+.pdf-download-btn:hover {
+  background-color: #cada15;
+  color:black;
+  font-weight: bold;
+}
+@media only screen and (max-width: 768px) {
+  .course-header {
+    padding: 14%;
+  }
+
+  .header-typing-text h3 {
+    font-size: 0.5rem;
+  }
+
+  .course-details-nav {
+    background-color: #ffc107;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 6%;
+    height: 45px;
+  }
+
+  .course-details-content {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 5%;
+  }
+
+  .course-text {
+    padding: 0px;
+    gap: 20px;
+  }
 }

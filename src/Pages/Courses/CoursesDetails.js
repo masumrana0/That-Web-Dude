@@ -1,11 +1,12 @@
 import React from "react";
-import { FaStar } from "react-icons/fa";
-import { useLoaderData } from "react-router-dom";
+import axios, { Axios } from "axios";
+import fileDownload from "js-file-download";
+import { Link, useLoaderData } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import Accordion from "./Accordian";
 import CardDetailsCard from "./CardDetailsCard";
-import CourseCard from "./CourseCard";
 import "./CourseDettails.css";
+import pdf from "../../assets/masum.pdf";
 
 const CoursesDetails = () => {
   const data = useLoaderData();
@@ -21,7 +22,6 @@ const CoursesDetails = () => {
     description,
     others,
   } = data;
-  console.log(data);
 
   return (
     <div className="course-details-container">
@@ -36,6 +36,14 @@ const CoursesDetails = () => {
               repeat={Infinity}
             />
           </h3>
+        </div>
+        <div className="btn-pdf-container">
+          <a href={pdf} download={pdf}>
+            <button className="pdf-download-btn">
+              {" "}
+              Download Course Curriculum PDF
+            </button>
+          </a>
         </div>
       </div>
 
@@ -63,13 +71,13 @@ const CoursesDetails = () => {
           </div>
           <div className="accoridan-main-container">
             <div>
-            <div className="accordian-title">
-            <h2>Lessons</h2>
-            <div className="lestion-text">
-              <p>48 lessons</p>
-              <p>01.02:10</p>
-            </div>
-          </div>
+              <div className="accordian-title">
+                <h2>Lessons</h2>
+                <div className="lestion-text">
+                  <p>48 lessons</p>
+                  <p>01.02:10</p>
+                </div>
+              </div>
               <Accordion />
             </div>
           </div>
