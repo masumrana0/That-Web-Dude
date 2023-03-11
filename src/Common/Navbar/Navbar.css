@@ -88,6 +88,7 @@ nav {
 
 .logo {
     display: flex;
+    align-items: center;
     gap: 10px;
 }
 
@@ -203,6 +204,7 @@ nav {
         flex-direction: column;
         position: relative;
         width: 100%;
+        margin-top: ;
     }
 
     .menu-icon {
@@ -244,7 +246,7 @@ nav {
     }
 
     .ture {
-        margin-top: 262px;
+        margin-top: 350px;
     }
 
 
@@ -262,6 +264,11 @@ nav {
 
     .right-side {
         margin-top: 10px;
+        
+    }
+    .after-login{
+        display: flex;
+        flex-direction: column;
     }
 
     .signin-button {

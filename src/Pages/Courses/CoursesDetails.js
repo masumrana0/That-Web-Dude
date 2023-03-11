@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import axios, { Axios } from "axios";
 import fileDownload from "js-file-download";
 import { Link, useLoaderData } from "react-router-dom";
@@ -7,25 +7,22 @@ import Accordion from "./Accordian";
 import CardDetailsCard from "./CardDetailsCard";
 import "./CourseDettails.css";
 import pdf from "../../assets/masum.pdf";
+import { contexts } from "../../Contexts/UserContext";
 
 const CoursesDetails = () => {
   const data = useLoaderData();
+  const {theme}=useContext(contexts);
+  
   const {
     name,
     title,
-    photo,
-    price,
-    ins_photo,
-    instructor,
-    duration,
     introduction,
     description,
-    others,
   } = data;
 
   return (
-    <div className="course-details-container">
-      <div className="course-header">
+    <div className={`course-details-container ${theme ? "cardDarkMode" : "cardLightTheme"}`}>
+      <div className={`course-header ${theme ? "cardDarkMode" : "cardLightTheme"} `}>
         <div className="header-underline"></div>
         <div className="header-typing-text">
           <h3>
@@ -51,17 +48,17 @@ const CoursesDetails = () => {
         <h4>Description</h4>
         <h4>Lessons</h4>
         <h4>Reviews</h4>
-        <h4>Instructor</h4>
+        
       </div>
 
-      <div className="course-details-content">
-        <div className="course-text">
+      <div className={`course-details-content `}>
+        <div className={`course-text `}>
           <div>
             <h2>Course</h2>
             <h5>{title}</h5>
           </div>
 
-          <div>
+          <div >
             <h2>Introduction</h2>
             <p>{introduction}</p>
           </div>
@@ -82,7 +79,7 @@ const CoursesDetails = () => {
             </div>
           </div>
         </div>
-        <div className="course-card">
+        <div className={`course-card`}>
           <CardDetailsCard data={data} />
         </div>
       </div>

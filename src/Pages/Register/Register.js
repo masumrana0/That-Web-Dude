@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { toast } from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, Navigate,   } from 'react-router-dom';
  
 import { contexts } from '../../Contexts/UserContext';
 import './Register.css';
@@ -23,10 +23,11 @@ const Register = () => {
 
       createUser(email,password)
       .then((result)=>{
+        
         verifyEmail();
         updateProfileName(name);
          toast.success('Please Check email')
-        console.log(result.user)
+         Navigate('/login')
       })
       .catch((error=>{
         console.error(error)

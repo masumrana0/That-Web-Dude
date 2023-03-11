@@ -8,6 +8,7 @@ const UserContext = ({ children }) => {
     const [theme, setTheme] = useState( );
     const [updatedTheme,SetupdatedTheme] = useState(null);
     const [user, setUser] = useState(null);
+    const [loading,setLoading]=useState(true);
 
     //  add Seclected theme in localStorage 
 
@@ -58,23 +59,28 @@ const UserContext = ({ children }) => {
 
     // Login with Email Password 
     const loginWithEmailPassword = (email, Password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, Password)
     }
     // Login With Google 
     const LoginWithGoogle = () => {
+        setLoading(true)
         return signInWithPopup(auth, googleAuthProvider);
     }
 
     //Login with Github 
     const LoginWithGithub = () => {
+        setLoading(true)
         return signInWithPopup(auth, gitHubAuthProvider)
     }
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
           if(currentUser===null|| currentUser.emailVerified){
+           
             setUser(currentUser);
-            console.log('Auth state changed',currentUser)
+            setLoading(false)
+            // console.log('Auth state changed',currentUser)
           }
           
         })
@@ -100,7 +106,7 @@ const UserContext = ({ children }) => {
         LoginWithGithub,
         LoginWithGoogle,
         LogOut,
-
+        loading
     };
     return (
         <contexts.Provider value={ContextInfo}>

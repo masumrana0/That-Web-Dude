@@ -7,16 +7,12 @@ import "./CourseDetailsCard.css";
 const CardDetailsCard = ({ data }) => {
   const { theme } = useContext(contexts);
   const {
-    id,
     name,
     title,
-    photo,
     price,
     ins_photo,
     instructor,
     duration,
-    introduction,
-    description,
     others,
   } = data;
   return (
@@ -27,7 +23,7 @@ const CardDetailsCard = ({ data }) => {
     >
       <img src={data?.photo} alt="" />
 
-      <div className="card-dettails">
+      <div className={`card-dettails  theme ? "cardDarkMode" : "cardLightTheme"`}>
         <div className={`name-rating`}>
           <p className={theme ? "cardDarkMode" : "cardLightMode"}>{name}</p>{" "}
           <span className={theme ? "cardDarkMode" : "cardLightMode"}>
@@ -38,15 +34,12 @@ const CardDetailsCard = ({ data }) => {
           </span>
         </div>
 
-       
-           
-            <div className="ins-container">
-              <h3>Instructor</h3>
-              <img src={ins_photo} />
-              <h5>{instructor}</h5>
-            </div>
-       
-        
+        <div className="ins-container">
+          <h3>Instructor</h3>
+          <img src={ins_photo} />
+          <h5>{instructor}</h5>
+        </div>
+
         <h3>{title}</h3>
         <div className="duration-people">
           <h5 className="duration">
@@ -58,7 +51,7 @@ const CardDetailsCard = ({ data }) => {
         <h3>Price:${price}</h3>
       </div>
       <div className="cardDetails-btn">
-        <Link to={`/coursedetails/${id}`}>
+        <Link to='/paywith'>
           <button className="btn-purchase">Purchase</button>
         </Link>
       </div>

@@ -1,0 +1,24 @@
+.payment-method{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    margin:0 auto;
+     
+}
+.payment-method img{
+width: 100px;
+height: 100px;
+margin-right: 10px;
+border: 1px solid rgb(188, 140, 140);
+cursor: pointer; 
+
+}
+ 
+.payment-container h2{
+    text-align: center;
+    margin: 10px 0px;
+}
+.darkTheme{
+    color:white;
+    background-color: var(--dark);
+}

@@ -8,14 +8,17 @@ const AllCourses = () => {
 
   return (
     <div className="all-courses-cotainer">
-      <div className="course-navigation">
-        <Link className="all-courses-link">All Courses</Link>
+     
+     <div className="course-navigation">
+        <Link to='/allcourses' className="all-courses-link">All Courses</Link>
         {datas.map((data, index) => (
-          <Link key={index} className="all-courses-link">
+          <Link to={`/coursedetails/${data?.id}`} key={index} className="all-courses-link">
             {data.name}
           </Link>
         ))}
-      </div>
+     
+     </div>
+      
       <div className="all-courses-card">
         {datas.map((data) => (
           <CourseCard key={data.id} data={data} />

@@ -1,0 +1,153 @@
+.home-card-container {
+  margin-left: 12%;
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 50px;
+}
+.home-card {
+  width: 600px;
+  height: 250px;
+  border: 2px solid #d2d2d2;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 3px;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.home-card-banner {
+  width: 30%;
+}
+.home-card-banner img {
+  width: 100%;
+  height: 250px;
+  border-radius: 5px;
+}
+
+.home-card-text {
+  width: 70%;
+}
+
+.home-card-text h2 {
+  color: #0dcaf0;
+  margin-top: 11px;
+}
+
+.site-introduce-corner-card {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5% auto;
+}
+
+.introduce-corner-card-banner {
+  width: 50%;
+}
+
+.introduce-corner-card-banner img {
+  width: 100%;
+  height: 500px;
+}
+
+.introduce-corner-card-content {
+  width: 50%;
+  height: 500px;
+  background-color: #f8f9fa;
+  padding: 5%;
+}
+
+.introduce-card-title {
+  margin-bottom: 20px;
+}
+
+.acheivement-rating {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+.acheivement-rating p {
+  color: #7c7c7a;
+}
+
+@media only screen and (max-width: 768px) {
+  .home-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     margin-left:2%;
+  }
+
+  .home-card {
+    width: 95%;
+    height: 150px;
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 3px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .home-card-banner img {
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+  }
+
+  
+  .home-card-text {
+    width: 70%;
+  }
+  .home-card-text-span{
+    display: none;
+  }
+  
+  .home-card-text h2 {
+    color: #0dcaf0;
+    margin-top: 11px;
+  }
+
+
+  
+.site-introduce-corner-card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10% auto;
+  
+}
+
+.introduce-corner-card-banner{
+  width: 95%;
+}
+
+.introduce-corner-card-content{
+  width: 95%;
+  height: 100%;
+  overflow: hidden;
+   
+  background-color: #ced2d5;
+}
+
+
+}
+
+
+
+/* for Web Theme  */
+
+.homeDarkTheme{
+  background-color: black;
+  color:white;
+}
+
+.homeLightTheme{
+  
+}

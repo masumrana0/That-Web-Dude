@@ -69,12 +69,13 @@
   align-items: center;
   justify-content: center;
   margin: 10px 0px;
+  
 }
 .pdf-download-btn {
   padding: 10px;
   font-weight: bold;
 
-  border: none;
+   
   color: rgb(34, 29, 29);
   font-weight: bold;
   border-radius: 8px;
