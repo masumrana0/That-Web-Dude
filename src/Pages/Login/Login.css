@@ -142,6 +142,11 @@
   text-decoration: underline;
  }
 
+
+ .error-container p{
+ color:red;
+ margin:10px 0px;
+ }
  @media only screen and (max-width:768px) {
   .login-container{
     width: 100%;

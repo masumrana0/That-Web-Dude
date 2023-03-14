@@ -1,11 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { contexts } from "../../Contexts/UserContext";
 import "./Login.css";
 import { FaGithubSquare, FaGoogle } from "react-icons/fa";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 const Login = () => {
-
   const {
     theme,
     loginWithEmailPassword,
@@ -14,9 +13,10 @@ const Login = () => {
     LoginWithGoogle,
   } = useContext(contexts);
   const Navigate = useNavigate();
-  const location=useLocation();
-  const from =location.state?.from?.pathname || '/'
- 
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  const [error, setError] = useState(null);
+
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -26,6 +26,7 @@ const Login = () => {
 
     loginWithEmailPassword(email, password)
       .then((result) => {
+        form.reset();
         if (!result.user.emailVerified) {
           verifyEmail().then((result) => {
             toast.success(
@@ -37,27 +38,42 @@ const Login = () => {
           return Navigate(from, { replace: true });
         }
       })
-      .catch((error) => console.error(error, error.code));
+      .catch((error) => {
+        if (error.message === "Firebase: Error (auth/user-not-found).") {
+          setError("User not found.Please Sign up");
+        }
+        console.error(error.message);
+
+        if (
+          error.message ===
+          "react_devtools_backend.js:2655 Firebase: Error (auth/wrong-password)."
+        ) {
+          setError('Wrong Password')
+        }
+      });
   };
 
   // Handle GOogle LOgin
   const handleGoogleLogin = () => {
     LoginWithGoogle()
       .then((result) => {
-        console.log(result.user);
-        Navigate(from, { replace: true })
+        setError(null);
+        Navigate(from, { replace: true });
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        setError(error.messages);
+        console.error(error.message);
+      });
   };
 
   //    Handle Github Login
   const handleGithubLogin = () => {
     LoginWithGithub()
       .then((res) => {
-        Navigate(from, { replace: true })
-        const user=res.user;
-        console.log(user)
-        })
+        Navigate(from, { replace: true });
+        const user = res.user;
+        console.log(user);
+      })
       .catch((error) => console.error(error));
   };
 
@@ -88,9 +104,14 @@ const Login = () => {
             required
           />
         </label>
+        <div className="error-container">
+          <p> {error}</p>
+        </div>
+
         <button type="submit" className="btn-sigin">
           Sign in
         </button>
+
         <div className="hr-block">
           <hr className="login-hr" />
           or
