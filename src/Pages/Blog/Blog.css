@@ -1,0 +1,16 @@
+.blog-container{
+   width: 80%;
+   margin:5% auto; 
+    
+    
+    
+}
+
+.blog-container h2{
+   margin:20px 0px;
+}
+
+.blog-container img{
+    width: 70%;
+    margin:30px;
+}

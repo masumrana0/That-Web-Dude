@@ -7,8 +7,14 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Payment from "../Pages/CoursePurches/Payment";
 import PrivateRoute from "./PrivateRoute";
+import Blog from "../Pages/Blog/Blog";
+import EmtyPage from "../Pages/404Page/404Page";
 
 export const router = createBrowserRouter([
+  {
+    path:"*",
+    element:<EmtyPage/>
+  },
   {
     path: "/",
     element: <Root />,
@@ -49,6 +55,10 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path:'/blog',
+        element:<Blog/>
+      }
     ],
   },
 ]);

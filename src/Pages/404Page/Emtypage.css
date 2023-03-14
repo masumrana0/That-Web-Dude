@@ -1,0 +1,50 @@
+.emty-route-container {
+    width: 20%;
+    height: 20%;
+    margin:0px auto;
+    text-align: center;
+   
+
+}
+
+.emty-route-container h1{
+    font-size: 5rem;
+}
+
+.container-emty h2{
+    font-size: 2rem;
+}
+
+.emty-route-container button{
+    padding:10px 12px;
+    margin:5px;
+    border:none;
+    background-color: #190b48;
+    color:white;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.container-emty{
+    background-color: #c9c8c8;
+    width: 100%;
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 768px){
+
+    .emty-route-container {
+   
+        width: 100%;
+        height: 20%;
+        margin:0px auto;
+        text-align: center;
+        
+    }
+    
+    
+}
