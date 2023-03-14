@@ -11,18 +11,21 @@ import { contexts } from "../../Contexts/UserContext";
 
 const CoursesDetails = () => {
   const data = useLoaderData();
-  const {theme}=useContext(contexts);
-  
-  const {
-    name,
-    title,
-    introduction,
-    description,
-  } = data;
+  const { theme } = useContext(contexts);
+
+  const { name, title, introduction, description } = data;
 
   return (
-    <div className={`course-details-container ${theme ? "cardDarkMode" : "cardLightTheme"}`}>
-      <div className={`course-header ${theme ? "cardDarkMode" : "cardLightTheme"} `}>
+    <div
+      className={`course-details-container ${
+        theme ? "cardDarkMode" : "cardLightTheme"
+      }`}
+    >
+      <div
+        className={`course-header ${
+          theme ? "cardDarkMode" : "cardLightTheme"
+        } `}
+      >
         <div className="header-underline"></div>
         <div className="header-typing-text">
           <h3>
@@ -48,7 +51,6 @@ const CoursesDetails = () => {
         <h4>Description</h4>
         <h4>Lessons</h4>
         <h4>Reviews</h4>
-        
       </div>
 
       <div className={`course-details-content `}>
@@ -58,7 +60,7 @@ const CoursesDetails = () => {
             <h5>{title}</h5>
           </div>
 
-          <div >
+          <div>
             <h2>Introduction</h2>
             <p>{introduction}</p>
           </div>
@@ -83,6 +85,10 @@ const CoursesDetails = () => {
           <CardDetailsCard data={data} />
         </div>
       </div>
+
+     <div className="premum-btn-contnainer">
+     <Link to='/paywith'> <button className="premium-btn">Get Premium Access</button></Link>
+     </div>
     </div>
   );
 };

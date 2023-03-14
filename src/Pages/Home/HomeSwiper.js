@@ -1,40 +1,71 @@
-import React from "react";
-import "./HomeSwiper.css";
+import React, { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination } from "swiper";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import HomeSwiperCard from "./HomeSwiperCard";
 
-const HomeSwiper = ({datas}) => {
-  
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+import "./HomeSwiper.css";
+
+// import required modules
+import { Pagination } from "swiper";
+import HomeSwiperCard from "./HomeSwiperCard";
+import { contexts } from "../../Contexts/UserContext";
+const HomeSwiper = ({ datas }) => {
+  const {theme}=useContext(contexts);
   return (
-    <div className="main-swiper">
+    <>
       <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
-        centeredSlides={true}
-        slidesPerView={"auto"}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
+        slidesPerView={3}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
         }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        modules={[Pagination]}
         className="mySwiper"
-         
-      >
-        {
-             datas.map(data=><SwiperSlide  >
-                <HomeSwiperCard data={data}/>
-             </SwiperSlide>)
-        }
+        breakpoints={{
+          350:{
+            slidesPerView:1,
+            spaceBetween:10
+          },
+          280:{
+            slidesPerView:1,
+            spaceBetween:10
+          },
+          530:{
+            slidesPerView:2,
+            spaceBetween:40
+          },
+          810:{
+            slidesPerView:2,
+            spaceBetween:50
+          },
+          760:{
+            slidesPerView:2,
+            spaceBetween:50
+          },
+          910:{
+            slidesPerView:2,
+            spaceBetween:55
+          },
+          1280:{
+            slidesPerView:3,
+            spaceBetween:55
+          },
+          1160:{
+            slidesPerView:2,
+            spaceBetween:10
+          },
+
+         }}
+      > 
+      {
+        datas.map(data=><SwiperSlide className={` ${theme? "header-home-DarkMode":""}`} key={data.id}>
+         <HomeSwiperCard data={data} />
+        </SwiperSlide>)
+      }
       </Swiper>
-    </div>
+    </>
   );
 };
 

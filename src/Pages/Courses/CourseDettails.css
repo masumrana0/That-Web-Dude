@@ -88,6 +88,24 @@
   color:black;
   font-weight: bold;
 }
+
+.premum-btn-contnainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+}
+.premium-btn{
+   padding:12px 25px;
+   background-color: rgb(166, 9, 9);
+   color:white;
+   font-weight: bold;
+   font-size: 1rem;
+   border:none;
+   border-radius: 8px;
+   cursor: pointer;
+  
+}
 @media only screen and (max-width: 768px) {
   .course-header {
     padding: 14%;

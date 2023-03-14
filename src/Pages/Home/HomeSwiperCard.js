@@ -1,20 +1,21 @@
-import React from 'react';
-import './HomeSwoperCard.css';
+import React, { useContext } from "react";
+import { contexts } from "../../Contexts/UserContext";
+import "./HomeSwoperCard.css";
 
-const HomeSwiperCard = ({data}) => {
-    const {id,name,company_name,position,photo}=data
-    console.log(data)
-    return (
-        <div className='swiper-container' >
-            {/* <img src={photo} alt={'successfull Student'}/>
-            <h2>{name}</h2>
-             <div>
-                <p>{position}</p>
-                <p>{company_name}</p>
-             </div> */}
-        </div>
-        
-    );
+const HomeSwiperCard = ({ data }) => {
+  const { name, Company_name, position, photo } = data;
+ const {theme}=useContext(contexts)
+  return (
+    <div className={` swiper-card-container ${theme? " swiper-card-DarkMode":""}`}>
+      <img src={photo} alt={"successfull Student"} />
+
+      <div className="swiper-card-text">
+        <h2>{name}</h2>
+        <p>{position}</p>
+        <p>{Company_name}</p>
+      </div>
+    </div>
+  );
 };
 
 export default HomeSwiperCard;

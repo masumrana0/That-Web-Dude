@@ -24,6 +24,8 @@ const AllCourses = () => {
           <CourseCard key={data.id} data={data} />
         ))}
       </div>
+
+      
     </div>
   );
 };
